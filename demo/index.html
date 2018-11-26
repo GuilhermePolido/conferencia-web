@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Conferencia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" />
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
+    <script type='text/javascript' src='../jquery.particleground.js'></script>
+    <script type='text/javascript' src='js/demo.js'></script>
+</head>
+
+<body>
+    <div id="particles">
+        <div id="intro">
+            <div id="listUser">
+                <ul class="list-group">
+                    <li class="list-group-item" style="background-color: #555; color: #fff">Usuário Conectados</li>
+                </ul>
+            </div>
+            <!-- <h1 id="title-room" style="display: none;"></h1> -->
+            <!-- Pane 0------------------------------------------------------------------------------ -->
+            <div class="pane" id="pane_0">
+                <h1>Conferência</h1>
+                <div class="containet-input">
+                    <input type="text" id="name" class="form-input" placeholder="SEU NOME AQUI">
+                </div>
+                <a href="#" id="prox" class="btn">PROXIMO</a>
+            </div>
+            <!-- Pane 1------------------------------------------------------------------------------ -->
+            <div class="pane" id="pane_1" style="display: none">
+                <h1>Qual sala?</h1>
+                <div class="containet-input">
+                    <input type="text" placeholder="SUA SALA AQUI" id="room_field" class="form-control form-input">
+                </div>
+                <a href="#" id="join" class="btn">BUSCAR</a>
+            </div>
+
+            <!-- Pane 2------------------------------------------------------------------------------ -->
+            <div class="pane" id="pane_2" style="display: none">
+                <h2 id="user"></h2>
+                <h2 id="nomeSala"></h2>
+                <div id="video_container"></div>
+                <a href="#" id="quit" class="btn btn-red">ENCERRAR</a>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://api.bistri.com/bistri.conference.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>
