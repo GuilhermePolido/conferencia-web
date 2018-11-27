@@ -9,6 +9,13 @@ var sala;
 
 var menbersOnline;
 
+$(".lds-ellipsis").hide();
+
+$('#prox').click(function () {
+    $("#pane_0").hide();
+    $(".lds-ellipsis").show();
+});
+
 function colocarNomes() {
     const title = '<li class="list-group-item" style="background-color: #555; color: #fff">Usuário Conectados</li>';
     var childrens = title;
@@ -67,6 +74,7 @@ conectar = function () {
     BistriConference.signaling.addHandler("onConnected", function () {
         // show pane with id "pane_1"
         showPanel("pane_1");
+        $(".lds-ellipsis").hide();
     });
 
     // when an error occured on the server side
@@ -112,6 +120,7 @@ conectar = function () {
     BistriConference.signaling.addHandler("onQuittedRoom", function (room) {
         // show pane with id "pane_1"
         showPanel("pane_1");
+        $(".lds-ellipsis").hide();
         // stop the local stream
         BistriConference.stopStream();
         $("#listUser").hide();
