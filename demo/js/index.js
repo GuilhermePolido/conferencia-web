@@ -1,5 +1,9 @@
 $(document).ready(() => {
     $("#listUser").hide();
+    $("#btnTgl").hide();
+    $("#btnTgl").on('click', function(){
+        $("#listUser").slideToggle("slow");
+    });
 });
 
 var room;
@@ -17,11 +21,11 @@ $('#prox').click(function () {
 });
 
 function colocarNomes() {
-    const title = '<li class="list-group-item" style="background-color: #555; color: #fff">Usuário Conectados</li>';
+    const title = '<li id="btnTgl" class="list-group-item" style="background-color: #555; color: #fff">Usuário Conectados</li>';
     var childrens = title;
 
     for (var i = 0, max = menbersOnline.length; i < max; i++) {
-        childrens += '<li class="list-group-item">' + menbersOnline[i].name + '</li>';
+        childrens += '<li class="list-group-item user">' + menbersOnline[i].name + '</li>';
     }
     $('.list-group').html(childrens);
 }
@@ -105,7 +109,7 @@ conectar = function () {
 
             menbersOnline = data.members;
         });
-        $("#listUser").show();
+        $("#btnTgl").show();
 
     });
 
@@ -124,6 +128,7 @@ conectar = function () {
         // stop the local stream
         BistriConference.stopStream();
         $("#listUser").hide();
+        $("#btnTgl").hide();
 
     });
 
@@ -175,7 +180,7 @@ function joinConference() {
 // when button "Quit Conference Room" has been clicked
 function quitConference() {
     $("#listUser").hide();
-
+    $("#btnTgl").hide();
     // quit the current conference room
     BistriConference.quitRoom(room);
 
